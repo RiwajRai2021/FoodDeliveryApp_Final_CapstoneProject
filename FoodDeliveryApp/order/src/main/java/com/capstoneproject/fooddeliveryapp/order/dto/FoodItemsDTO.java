@@ -1,8 +1,7 @@
-package com.capstoneproject.fooddeliveryapp.foodcatalogue.dto;
+package com.capstoneproject.fooddeliveryapp.order.dto;
 
-
-public class FoodItemDTO {
-
+public class FoodItemsDTO {
+	
 	private int id;
 	private String itemName;
 	private String itemDescription;
@@ -10,14 +9,14 @@ public class FoodItemDTO {
 	private Long  price;
 	private Integer restaurantId;
 	private Integer quantity;
-
-	public FoodItemDTO() {
+	
+	public FoodItemsDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public FoodItemDTO(int id, String itemName, String itemDescription, boolean isVeg, Long price, Integer restaurantId,
-			Integer quantity) {
+	public FoodItemsDTO(int id, String itemName, String itemDescription, boolean isVeg, Long price,
+			Integer restaurantId, Integer quantity) {
 		super();
 		this.id = id;
 		this.itemName = itemName;
@@ -86,8 +85,11 @@ public class FoodItemDTO {
 
 	@Override
 	public String toString() {
-		return "FoodItemDTO [id=" + id + ", itemName=" + itemName + ", itemDescription=" + itemDescription + ", isVeg="
+		return "FoodItemsDTO [id=" + id + ", itemName=" + itemName + ", itemDescription=" + itemDescription + ", isVeg="
 				+ isVeg + ", price=" + price + ", restaurantId=" + restaurantId + ", quantity=" + quantity + "]";
 	}
+	
+	
+	
 
 }

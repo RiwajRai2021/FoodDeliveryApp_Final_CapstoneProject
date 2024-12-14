@@ -1,0 +1,44 @@
+package com.capstoneproject.fooddeliveryapp.order.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="sequence")
+public class Sequence {
+
+	@Id
+	private int id; 
+	
+	private int sequence;
+
+	public Sequence() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Sequence(int id, int sequence) {
+		super();
+		this.id = id;
+		this.sequence = sequence;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getSequence() {
+		return sequence;
+	}
+
+	public void setSequence(int sequence) {
+		this.sequence = sequence;
+	} 
+	
+	
+	
+	
+}
