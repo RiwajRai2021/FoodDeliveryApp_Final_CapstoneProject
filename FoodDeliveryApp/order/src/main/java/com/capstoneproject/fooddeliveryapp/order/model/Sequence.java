@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Sequence {
 
 	@Id
-	private int id; 
+	private String id; 
 	
 	private int sequence;
 
@@ -16,17 +16,17 @@ public class Sequence {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sequence(int id, int sequence) {
+	public Sequence(String id, int sequence) {
 		super();
 		this.id = id;
 		this.sequence = sequence;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

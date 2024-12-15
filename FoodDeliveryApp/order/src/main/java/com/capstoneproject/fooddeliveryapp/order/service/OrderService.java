@@ -23,19 +23,15 @@ public class OrderService {
 	@Autowired
 	RestTemplate restTemplate; 
 	
-	public OrderDTO saveOrderInDb(OrderDTOFromFE orderDetails) {
-		Integer newOrderID = sequenceGenerator.generateNextOrderId(); 
-		UserDTO userDTO = fetchUserDetailsFromUserId(orderDetails.getUserId()); 
-		Order orderToBeSaved = new Order(newOrderID, orderDetails.getFoodItemsList(), orderDetails.getRestaurant(), userDTO);
-		orderRepository.save(orderToBeSaved); 
-		return OrderMapper.INSTANCE.mapOrderToOrderDTO(orderToBeSaved); 
-		
-	} 
-	
-	private UserDTO fetchUserDetailsFromUserId(Integer userId) {
-		return restTemplate.getForObject("http://USER-SERVICE/user/fetchUserById/" + userId,UserDTO.class);
-		
-		
-		
+	  public OrderDTO saveOrderInDb(OrderDTOFromFE orderDetails) {
+	        Integer newOrderID = sequenceGenerator.generateNextOrderId();
+	        UserDTO userDTO = null; //fetchUserDetailsFromUserId(orderDetails.getUserId());
+	        Order orderToBeSaved = new Order(newOrderID, orderDetails.getFoodItemsList(), orderDetails.getRestaurant(), userDTO );
+	        orderRepository.save(orderToBeSaved);
+	        return OrderMapper.INSTANCE.mapOrderToOrderDTO(orderToBeSaved);
+	    }
+
+	    private UserDTO fetchUserDetailsFromUserId(Integer userId) {
+	       return restTemplate.getForObject("http://USER-SERVICE/user/fetchUserById/" + userId, UserDTO.class);
+	    }
 	}
-}
