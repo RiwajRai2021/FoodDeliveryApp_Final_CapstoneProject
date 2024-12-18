@@ -10,14 +10,14 @@ import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@ang
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  // declarations: [
+  //   AppComponent
+  // ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     HeaderModule, RestaurantListingModule, 
-    HttpClientModule
+    HttpClientModule HttpClient
     
 
   ],
