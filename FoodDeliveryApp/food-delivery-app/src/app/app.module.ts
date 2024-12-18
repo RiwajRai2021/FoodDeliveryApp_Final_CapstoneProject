@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 
 
@@ -22,7 +22,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideHttpClient(withFetch()) 
   ],
   bootstrap: [AppComponent]
 })

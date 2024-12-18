@@ -30,17 +30,13 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [{
-              "glob": "**/*",
-              "input": "public",
-              "output": "/"
-            },
-            {
-              "glob": "**/*",
-              "input": "src/assets",
-              "output": "assets"
-            }
-            ],
+            "assets": [
+  {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "/assets"
+  }
+],
             "styles": [
               "src/styles.css"
             ],
