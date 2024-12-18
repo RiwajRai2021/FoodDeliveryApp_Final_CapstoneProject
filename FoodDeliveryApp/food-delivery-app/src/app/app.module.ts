@@ -4,6 +4,10 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
+import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -12,7 +16,10 @@ import { HeaderModule } from './header/header.module';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HeaderModule
+    HeaderModule, RestaurantListingModule, 
+    HttpClientModule
+    
+
   ],
   providers: [
     provideClientHydration(withEventReplay())
