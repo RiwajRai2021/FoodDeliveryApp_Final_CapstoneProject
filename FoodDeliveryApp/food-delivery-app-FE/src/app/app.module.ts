@@ -4,8 +4,8 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
-import { RestaurantListingComponent } from './restaurant-listing/restaurant-listing.component';
 import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,9 @@ import { RestaurantListingModule } from './restaurant-listing/restaurant-listing
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HeaderModule, RestaurantListingModule ],
+    HeaderModule, 
+    RestaurantListingModule, 
+  HttpClientModule ],
   providers: [
     provideClientHydration(withEventReplay())
   ],
