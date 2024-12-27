@@ -18,7 +18,7 @@ import com.capstoneproject.fooddelivery.RestaurantListing.repository.RestaurantR
 public class RestaurantService {
 
 	@Autowired
-	private RestaurantRepository restaurantRepository;
+	RestaurantRepository restaurantRepository;
 
 	public List<RestaurantDTO> findAllRestaurants() {
 		List<Restaurant> restaurants = restaurantRepository.findAll();

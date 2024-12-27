@@ -1,5 +1,6 @@
 package com.capstoneproject.fooddeliveryapp.foodcatalogue.dto;
 
+
 public class Restaurant {
 
 	private int id;

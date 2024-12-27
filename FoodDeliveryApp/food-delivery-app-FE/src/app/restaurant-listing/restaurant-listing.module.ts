@@ -5,13 +5,14 @@ import { RestaurantListingRoutingModule } from './restaurant-listing-routing.mod
 import { RestaurantListingComponent } from './components/restaurant-listing.component';
 
 
+
 @NgModule({
   declarations: [
-    RestaurantListingComponent
-  ],
+      ],
   imports: [
     CommonModule,
-    RestaurantListingRoutingModule
+    RestaurantListingRoutingModule, 
+    RestaurantListingComponent
   ]
 })
 export class RestaurantListingModule { }

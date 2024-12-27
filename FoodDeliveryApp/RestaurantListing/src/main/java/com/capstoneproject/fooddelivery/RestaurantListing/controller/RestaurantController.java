@@ -34,7 +34,7 @@ public class RestaurantController {
 	 @PostMapping("/addRestaurant")
 	 public ResponseEntity<RestaurantDTO>saveRestaurant(@RequestBody RestaurantDTO restaurantDTO){
 		 RestaurantDTO restaurantAdded=restaurantService.addRestaurantInDB(restaurantDTO); 
-		 return new ResponseEntity<RestaurantDTO>(restaurantAdded, HttpStatus.CREATED); 
+		 return new ResponseEntity<>(restaurantAdded, HttpStatus.CREATED); 
 	 }
 	
 	 @GetMapping("fetchById/{id}")
