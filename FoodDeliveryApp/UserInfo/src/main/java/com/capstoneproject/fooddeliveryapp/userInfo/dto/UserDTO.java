@@ -12,19 +12,30 @@ public class UserDTO {
 	private String address; 
 	
 	private String city;
+	
+	private String role; 
 
-	public UserDTO(int userId, String userName, String userPassword, String address, String city) {
+	public UserDTO(int userId, String userName, String userPassword, String address, String city, String role) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.address = address;
 		this.city = city;
+		this.role = role; 
 	}
 
 	public UserDTO() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public int getUserId() {
