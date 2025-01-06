@@ -17,7 +17,7 @@ public class SecurityConfig {
             .cors().and()
             .authorizeHttpRequests(authz -> 
                 authz
-                    .antMatchers("/api/auth/register", "/api/auth/login").permitAll()  // Ensure these endpoints are accessible
+                    .antMatchers("/api/auth/register", "/api/auth/login").permitAll()
                     .anyRequest().authenticated()
             );
 
