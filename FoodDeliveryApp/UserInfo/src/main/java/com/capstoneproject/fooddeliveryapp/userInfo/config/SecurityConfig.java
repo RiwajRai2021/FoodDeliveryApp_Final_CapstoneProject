@@ -1,4 +1,5 @@
 package com.capstoneproject.fooddeliveryapp.userInfo.config;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,6 +19,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(authz -> 
                 authz
                     .antMatchers("/api/auth/register", "/api/auth/login").permitAll()
+                    .antMatchers("/api/restaurants/**").authenticated() // Ensure authenticated access
                     .anyRequest().authenticated()
             );
 
