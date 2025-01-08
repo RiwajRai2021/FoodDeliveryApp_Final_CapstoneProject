@@ -8,6 +8,8 @@ import { RestaurantListingModule } from './restaurant-listing/restaurant-listing
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FoodCatalogueModule } from './food-catalogue/food-catalogue.module';
+import { OrderSummaryRoutingModule } from './order-summary/order-summary-routing.module';
+import { OrderSummaryComponent } from './order-summary/components/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,9 @@ import { FoodCatalogueModule } from './food-catalogue/food-catalogue.module';
     RestaurantListingModule, 
     HttpClientModule, 
     FoodCatalogueModule,
+    AppRoutingModule, 
+    OrderSummaryRoutingModule, 
+    OrderSummaryComponent
   ],
   providers: [
     provideClientHydration(withEventReplay())
