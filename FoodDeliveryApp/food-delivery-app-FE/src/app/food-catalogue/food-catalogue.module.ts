@@ -7,11 +7,12 @@ import { FoodCatalogueComponent } from './components/food-catalogue.component';
 
 @NgModule({
   declarations: [
-    FoodCatalogueComponent
+    
   ],
   imports: [
     CommonModule,
-    FoodCatalogueRoutingModule
+    FoodCatalogueRoutingModule, 
+    FoodCatalogueComponent
   ]
 })
 export class FoodCatalogueModule { }
