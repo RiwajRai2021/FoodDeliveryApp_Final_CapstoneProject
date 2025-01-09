@@ -1,35 +1,40 @@
-<div class="order-summary">
-    <h1>Order Summary</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of obj.foodItemsList">
-          <td>{{ item.itemName }}</td>
-          <td>{{ item.quantity }}</td>
-          <td>&#x20b9; {{ item.price || 0 }}</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="2">Total</td>
-          <td>&#x20b9; {{ total }}</td>
-        </tr>
-      </tfoot>
-    </table>
-    <button class="checkout-button" (click)="saveOrder()">Place Order</button>
-  </div>
-  
-  <div class="dialog-container" *ngIf="showDialog">
-    <div class="dialog-box">
-      <h2>Order Placed!</h2>
-      <p>Your order has been successfully placed.</p>
-      <button class="close-button" (click)="closeDialog()">Close</button>
+<div class="container mt-5">
+  <div class="order-summary card shadow-sm">
+    <div class="card-header bg-grey text-white text-center">
+      <h3>Order Summary</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="thead-light">
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of obj.foodItemsList">
+            <td>{{ item.itemName }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>&#x20b9; {{ item.price || 0 }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total</td>
+            <td>&#x20b9; {{ total }}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button class="btn btn-grey btn-block" (click)="saveOrder()">Place Order</button>
     </div>
   </div>
-  
+
+  <div class="dialog-container d-flex justify-content-center align-items-center" *ngIf="showDialog">
+    <div class="dialog-box bg-white p-4 rounded shadow text-center">
+      <h2>Order Placed!</h2>
+      <p>Your order has been successfully placed.</p>
+      <button class="btn btn-danger" (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+</div>

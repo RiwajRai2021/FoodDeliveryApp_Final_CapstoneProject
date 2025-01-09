@@ -1,5 +1,7 @@
 package com.capstoneproject.fooddelivery.RestaurantListing.dto;
 
+import java.util.Objects;
+
 public class RestaurantDTO {
 	
 	private int id; 
@@ -73,5 +75,26 @@ public class RestaurantDTO {
 	} 
 	
 	
+	    @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj) return true;
+	        if (obj == null || getClass() != obj.getClass()) return false;
+	        RestaurantDTO that = (RestaurantDTO) obj;
+	        return id == that.id &&
+	               Objects.equals(name, that.name) &&
+	               Objects.equals(address, that.address) &&
+	               Objects.equals(city, that.city) &&
+	               Objects.equals(restaurantDescription, that.restaurantDescription);
+	    }
 
-}
+	    @Override
+	    public int hashCode() {
+	        return Objects.hash(id, name, address, city, restaurantDescription);
+	    }
+	}
+
+	
+	
+	
+
+
