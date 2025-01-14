@@ -9,6 +9,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 1.5em; /* to increase the font size */
 }
+
 .header-logo {
   font-size: 2em; /* General font size for the header logo */
 }
@@ -16,7 +17,6 @@
 .header-subtitle {
   font-size: 0.5em; /* Adjust this value to make the subtitle smaller */
 }
-
 
 .header-container {
   display: flex;
