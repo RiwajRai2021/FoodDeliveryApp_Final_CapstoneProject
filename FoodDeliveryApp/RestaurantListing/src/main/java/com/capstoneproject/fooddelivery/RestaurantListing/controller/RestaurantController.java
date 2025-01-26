@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ import com.capstoneproject.fooddelivery.RestaurantListing.service.RestaurantServ
 
 @RestController
 @RequestMapping("/restaurant")
-@CrossOrigin
+@CrossOrigin(origins ="*")
 public class RestaurantController {
 
     @Autowired
@@ -33,6 +34,12 @@ public class RestaurantController {
     public ResponseEntity<RestaurantDTO> saveRestaurant(@RequestBody RestaurantDTO restaurantDTO) {
         RestaurantDTO restaurantAdded = restaurantService.addRestaurantInDB(restaurantDTO);
         return new ResponseEntity<>(restaurantAdded, HttpStatus.CREATED);
+    }
+    
+    @PutMapping("/addRestaurant")
+    public ResponseEntity<RestaurantDTO> updateRestaurant(@RequestBody RestaurantDTO restaurantDTO) throws Exception {
+        RestaurantDTO restaurantAdded = restaurantService.updateRestaurantInDB(restaurantDTO);
+        return new ResponseEntity<>(restaurantAdded, HttpStatus.ACCEPTED);
     }
 
     @GetMapping("fetchById/{id}")

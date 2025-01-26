@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,12 @@ public class User {
     private String city;
     private String role;
 	
-    public User() {
+    public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Long id, String userName, String userPassword, String address, String city, String role) {
+	public Users(Long id, String userName, String userPassword, String address, String city, String role) {
 		super();
 		this.id = id;
 		this.userName = userName;

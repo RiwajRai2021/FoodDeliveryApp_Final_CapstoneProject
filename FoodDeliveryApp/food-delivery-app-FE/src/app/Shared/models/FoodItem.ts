@@ -1,4 +1,6 @@
 export interface FoodItem {
+image: any;
+imageUrl: any;
     id?: number;
     itemName?: string;
     itemDescription?: string;

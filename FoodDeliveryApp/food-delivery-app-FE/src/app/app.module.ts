@@ -7,17 +7,21 @@ import { HeaderModule } from './header/header.module';
 import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 import { FoodCatalogueModule } from './food-catalogue/food-catalogue.module';
 import { OrderSummaryRoutingModule } from './order-summary/order-summary-routing.module';
 import { OrderSummaryComponent } from './order-summary/components/order-summary.component';
+import { UserModule } from './user/user.module';
+import { ResturantDetailsComponent } from './view/component/resturant-details/resturant-details.component';
+import { RestaurantDetailsModule } from './view/module/restaurant-details.module';
+import { StorageService } from './utils/storage.service';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-   
-  
+    AppComponent,  
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HeaderModule, 
@@ -26,10 +30,13 @@ import { OrderSummaryComponent } from './order-summary/components/order-summary.
     FoodCatalogueModule,
     AppRoutingModule, 
     OrderSummaryRoutingModule, 
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    UserModule,
+    RestaurantDetailsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    StorageService
   ],
   bootstrap: [AppComponent]
 })

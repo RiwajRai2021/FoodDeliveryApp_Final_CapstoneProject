@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from '../../utils/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,17 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  username = 'John Doe'
+  username: string = ''
+
+  constructor(private localStorage: StorageService) {
+    debugger;
+    if(localStorage == undefined) {
+      /*if(localStorage.getItem('user') != undefined || localStorage.getItem('user') != null) {
+        debugger;
+      }
+        */
+    }
+    
+  }
 
 }

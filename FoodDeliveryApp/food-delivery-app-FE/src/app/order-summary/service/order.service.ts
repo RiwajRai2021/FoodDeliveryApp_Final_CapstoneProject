@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import {  K8ExternalIp } from 'src/app/constants/url'; 
 import { API_URL_Order } from '../../constants/url';
 
 @Injectable({

@@ -19,6 +19,7 @@ export class FoodCatalogueComponent implements OnInit {
   foodItemCart: FoodItem[] = [];
   orderSummary: FoodCataloguePage;
   restaurant: Restaurant; // Define the restaurant property
+username: any;
 
   constructor(private route: ActivatedRoute, private foodItemService: FoodItemService, private router: Router) {
     this.restaurant = { /* Initialize with a default value if necessary */ };

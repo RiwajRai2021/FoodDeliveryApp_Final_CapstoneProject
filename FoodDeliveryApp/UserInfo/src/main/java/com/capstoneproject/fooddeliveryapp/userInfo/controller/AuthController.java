@@ -10,7 +10,8 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.capstoneproject.fooddeliveryapp.userInfo.model.User;
+import com.capstoneproject.fooddeliveryapp.userInfo.model.Users;
+import com.capstoneproject.fooddeliveryapp.userInfo.model.UserLogin;
 import com.capstoneproject.fooddeliveryapp.userInfo.service.UserService;
 
 @RestController
@@ -24,10 +25,10 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<Map<String, String>> register(@RequestBody User user) {
+    public ResponseEntity<Map<String, String>> register(@RequestBody Users user) {
         Map<String, String> response = new HashMap<>();
         try {
-            User registeredUser = userService.registerUser(user);
+            Users registeredUser = userService.registerUser(user);
             if (registeredUser != null) {
                 response.put("message", "Registration successful");
                 return ResponseEntity.ok(response);
@@ -43,18 +44,23 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> login(@RequestBody User user, HttpSession session) {
+    public ResponseEntity<Map<String, String>> login(@RequestBody UserLogin user, HttpSession session) throws Exception {
         Map<String, String> response = new HashMap<>();
-        User existingUser = userService.findByUserName(user.getUserName());
-        if (existingUser != null && passwordEncoder.matches(user.getUserPassword(), existingUser.getUserPassword())) {
-            session.setAttribute("user", existingUser);
+        Users existingUser = userService.findByUserName(user.getUsername());
+        if (existingUser != null) {
+            String token = userService.generateToke(user.getUsername());
+        	session.setAttribute("user", existingUser);
+        	response.put("role", existingUser.getRole());
             response.put("message", "Login successful");
+            response.put("token", token);
             return ResponseEntity.ok(response);
         } else {
             response.put("error", "Invalid credentials");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
     }
+    
+    
 
     @PostMapping("/logout")
     public ResponseEntity<Map<String, String>> logout(HttpSession session) {

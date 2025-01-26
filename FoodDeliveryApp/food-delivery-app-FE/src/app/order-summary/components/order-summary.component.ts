@@ -12,10 +12,18 @@ import { CommonModule } from '@angular/common';
   imports:[CommonModule]
 })
 export class OrderSummaryComponent implements OnInit {
+decrement(_t14: any) {
+throw new Error('Method not implemented.');
+}
+increment(_t14: any) {
+throw new Error('Method not implemented.');
+}
 
   obj: FoodCataloguePage; // Define the obj property
   total: number = 0; // Define the total property
   showDialog: boolean = false;
+username: any;
+foodItemResponse: any;
 
   constructor(private route: ActivatedRoute) { }
 
