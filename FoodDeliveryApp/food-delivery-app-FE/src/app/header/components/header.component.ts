@@ -13,13 +13,7 @@ export class HeaderComponent {
   username: string = ''
 
   constructor(private localStorage: StorageService) {
-    debugger;
-    if(localStorage == undefined) {
-      /*if(localStorage.getItem('user') != undefined || localStorage.getItem('user') != null) {
-        debugger;
-      }
-        */
-    }
+    
     
   }
 

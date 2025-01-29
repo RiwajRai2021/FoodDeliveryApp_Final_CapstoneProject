@@ -16,6 +16,9 @@ import { ResturantDetailsComponent } from './view/component/resturant-details/re
 import { RestaurantDetailsModule } from './view/module/restaurant-details.module';
 import { StorageService } from './utils/storage.service';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,  
@@ -32,7 +35,9 @@ import { StorageService } from './utils/storage.service';
     OrderSummaryRoutingModule, 
     OrderSummaryComponent,
     UserModule,
-    RestaurantDetailsModule
+    RestaurantDetailsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     provideClientHydration(withEventReplay()),

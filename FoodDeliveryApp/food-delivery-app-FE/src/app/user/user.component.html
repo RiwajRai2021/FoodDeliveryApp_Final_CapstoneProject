@@ -1,5 +1,8 @@
 <div class="container-fluid login">
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="title">
+        <h2>Login</h2>
+      </div>
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4">
       <input type="email" id="form2Example1" class="form-control" [(ngModel)]="loginData.username" [ngModelOptions]="{standalone: true}" />

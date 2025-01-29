@@ -50,6 +50,7 @@ public class AuthController {
         if (existingUser != null) {
             String token = userService.generateToke(user.getUsername());
         	session.setAttribute("user", existingUser);
+        	response.put("name", existingUser.getUserName());
         	response.put("role", existingUser.getRole());
             response.put("message", "Login successful");
             response.put("token", token);

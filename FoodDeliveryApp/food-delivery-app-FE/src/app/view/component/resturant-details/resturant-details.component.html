@@ -1,17 +1,19 @@
 <div>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Manager Resturant Details</h2>
-
-        <div class="mb-3">
-            <label for="dropdown" class="form-label">Select Resturant: </label>
-            <select id="dropdown" class="form-select" [(ngModel)]="selectedItem" (change)="onDropdownChange()">
-                <option value="" disabled>Choose any one</option>
-                <option *ngFor="let resturant of resturants" [value]="resturant.id">{{ resturant.name }}</option>
-            </select>
-        </div>
-
-        <div class="mb-4">
-            <button class="btn btn-primary" (click)="addNew()"> Add New</button>
+        <div class="details-container">
+            <h2 class="text-center mb-4 title">Manager Resturant Details</h2>
+            <div class="mb-3">
+                <label for="dropdown" class="form-label">Select Resturant: </label>
+                <select id="dropdown" class="form-select" [(ngModel)]="selectedItem" (change)="onDropdownChange()">
+                    <option value="" disabled>Choose any one</option>
+                    <option *ngFor="let resturant of resturants" [value]="resturant.id">{{ resturant.name }}</option>
+                </select>
+            </div>
+    
+            <div class="mb-4">
+                <button class="btn btn-primary new-btn" (click)="addNew()">Add New</button>
+                <button class="btn btn-primary nav-btn" (click)="navigate()">View Restaurents List</button>
+            </div>
         </div>
 
         <div *ngIf="selectedResturant" class="card p-4">
